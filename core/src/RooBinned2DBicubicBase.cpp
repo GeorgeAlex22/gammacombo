@@ -35,25 +35,25 @@ RooBinned2DBicubicBase<BASE>::RooBinned2DBicubicBase(
     coeffs(other.coeffs)
 { }
 
-template<class BASE>
-RooBinned2DBicubicBase<BASE>& RooBinned2DBicubicBase<BASE>::operator=(
-	const RooBinned2DBicubicBase<BASE>& other)
-{
-    if (&other == this) return *this;
-    BASE::operator=(other);
-    x = RooRealProxy("x", this, other.x);
-    y = RooRealProxy("y", this, other.y);
-    nBinsX = other.nBinsX;
-    nBinsY = other.nBinsY;
-    binSizeX = other.binSizeX;
-    binSizeY = other.binSizeY;
-    xmin = other.xmin;
-    xmax = other.xmax;
-    ymin = other.ymin;
-    ymax = other.ymax;
-    coeffs = other.coeffs;
-    return *this;
-}
+// template<class BASE>
+// RooBinned2DBicubicBase<BASE>& RooBinned2DBicubicBase<BASE>::operator=(
+// 	const RooBinned2DBicubicBase<BASE>& other)
+// {
+//     if (&other == this) return *this;
+//     BASE::operator=(other);
+//     x = RooRealProxy("x", this, other.x);
+//     y = RooRealProxy("y", this, other.y);
+//     nBinsX = other.nBinsX;
+//     nBinsY = other.nBinsY;
+//     binSizeX = other.binSizeX;
+//     binSizeY = other.binSizeY;
+//     xmin = other.xmin;
+//     xmax = other.xmax;
+//     ymin = other.ymin;
+//     ymax = other.ymax;
+//     coeffs = other.coeffs;
+//     return *this;
+// }
 
 template<class BASE>
 inline double RooBinned2DBicubicBase<BASE>::histcont(
