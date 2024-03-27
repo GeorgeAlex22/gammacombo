@@ -34,6 +34,8 @@
 #include <sys/stat.h>
 #include "boost/algorithm/string.hpp"
 #include "UtilsConfig.h"
+#include "RooFormulaVar.h"
+#include "TObjString.h"
 
 using namespace std;
 using namespace RooFit;
