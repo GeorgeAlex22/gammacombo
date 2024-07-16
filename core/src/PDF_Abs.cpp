@@ -83,6 +83,33 @@ PDF_Abs::~PDF_Abs()
 	}
 }
 
+void PDF_Abs::resizeTo(int nObs) {
+       
+	this->nObs  = nObs;
+    
+	covMatrix.ResizeTo(nObs,nObs);
+	corMatrix.ResizeTo(nObs,nObs);
+	corStatMatrix.ResizeTo(nObs,nObs);
+	corSystMatrix.ResizeTo(nObs,nObs);
+    
+    StatErr.clear(); SystErr.clear();
+    
+	for ( int i=0; i<nObs; i++ ){
+		StatErr.push_back(0.0);
+		SystErr.push_back(0.0);
+	}  
+    
+	for ( int i=0; i<nObs; i++ ){
+	   for ( int j=0; j<nObs; j++ ){
+          covMatrix[i][j] = 0.; 
+          corMatrix[i][j] = 0.; 
+          corStatMatrix[i][j] = 0.; 
+          corSystMatrix[i][j] = 0.; 
+       }   
+    }
+                
+}
+
 void PDF_Abs::initParameters(){assert(0);};
 void PDF_Abs::initRelations(){assert(0);};
 void PDF_Abs::initObservables(){assert(0);};

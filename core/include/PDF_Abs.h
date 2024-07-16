@@ -55,6 +55,7 @@ class PDF_Abs
 		PDF_Abs(int nObs);
 		PDF_Abs(int nObs, ParametersAbs &pars);
 		virtual             ~PDF_Abs();
+		void  				resizeTo(int nObs);
 		virtual void				build();
 		virtual void        buildPdf();
 		virtual void        buildCov();
